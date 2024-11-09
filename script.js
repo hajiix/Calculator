@@ -1,3 +1,18 @@
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("year").textContent = new Date().getFullYear();
+});
+
+const numbers = Array.from(document.querySelectorAll(".num"));
+const operators = Array.from(document.querySelectorAll(".operator"));
+const decimal = document.querySelector(".decimal");
+const equal = document.querySelector(".equal");
+
+const clear = document.querySelector(".clear");
+const del = document.querySelector(".delete");
+
+let screenAbove = document.querySelector(".previous");
+let screenBelow = document.querySelector(".current");
+
 function add(num1, num2) {
   return num1 + num2;
 }
@@ -31,14 +46,6 @@ let num1 = "";
 let operator = "";
 let num2 = "";
 
-const numbers = Array.from(document.querySelectorAll(".num"));
-const operators = Array.from(document.querySelectorAll(".operator"));
-const equal = document.querySelector(".equal");
-const clear = document.querySelector(".clear");
-const del = document.querySelector(".delete");
-let screenAbove = document.querySelector(".previous");
-let screenBelow = document.querySelector(".current");
-
 numbers.map((button) => {
   button.addEventListener("click", () => {
     if (operator) {
@@ -64,9 +71,24 @@ operators.map((button) => {
   });
 });
 
+decimal.addEventListener("click", () => {
+  console.log("ran");
+  if (num1 && !operator && !num1.includes(".")) {
+    num1 += ".";
+    screenBelow.textContent = num1;
+  } else if (operator && !num2.includes(".")) {
+    num2 += ".";
+    screenBelow.textContent = num2;
+  }
+});
+
 equal.addEventListener("click", () => {
   if (num1 && operator && num2) {
-    result = +operate(Number(num1), operator, Number(num2)).toFixed(10);
+    result = operate(Number(num1), operator, Number(num2));
+    result =
+      typeof result === "number"
+        ? +operate(Number(num1), operator, Number(num2)).toFixed(10)
+        : result;
     screenBelow.textContent = String(result);
     screenAbove.textContent = `${num1} ${operator} ${num2} =`;
     num1 = String(result);
