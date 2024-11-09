@@ -4,47 +4,57 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="calculator">
-      <div class="screen"></div>
-      <div class="undo">
-        <div class="clear long">CLEAR</div>
-        <div class="delete long">DELETE</div>
-      </div>
-      <div class="buttons">
-        <div class="row1">
-          <button class="button">7</button>
-          <button class="button">8</button>
-          <button class="button">9</button>
-          <button class="button">÷</button>
+    <div class="container">
+      <div class="calculator">
+        <div class="screen">
+          <div class="previous"></div>
+          <div class="current"></div>
         </div>
-
-        <div class="row2">
-          <button class="button">4</button>
-          <button class="button">5</button>
-          <button class="button">6</button>
-          <button class="button">×</button>
+        <div class="undo">
+          <div class="clear long">CLEAR</div>
+          <div class="delete long">DELETE</div>
         </div>
+        <div class="buttons">
+          <div class="row1">
+            <button class="button num">7</button>
+            <button class="button num">8</button>
+            <button class="button num">9</button>
+            <button class="button operator">÷</button>
+          </div>
 
-        <div class="row3">
-          <button class="button">1</button>
-          <button class="button">2</button>
-          <button class="button">3</button>
-          <button class="button">-</button>
-        </div>
+          <div class="row2">
+            <button class="button num">4</button>
+            <button class="button num">5</button>
+            <button class="button num">6</button>
+            <button class="button operator">×</button>
+          </div>
 
-        <div class="row4">
-          <button class="button">.</button>
-          <button class="button">0</button>
-          <button class="button">=</button>
-          <button class="button">+</button>
+          <div class="row3">
+            <button class="button num">1</button>
+            <button class="button num">2</button>
+            <button class="button num">3</button>
+            <button class="button operator">-</button>
+          </div>
+
+          <div class="row4">
+            <button class="button num">.</button>
+            <button class="button num">0</button>
+            <button class="button equal">=</button>
+            <button class="button operator">+</button>
+          </div>
         </div>
       </div>
     </div>
-
-    <footer> &copy;Abdurkader Abdi 2024</footer>
+    <footer>
+      Copyright &copy;
+      <script>
+        document.write(new Date().getFullYear());
+      </script>
+      hajiix
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>

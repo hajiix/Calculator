@@ -1,10 +1,20 @@
+html {
+  height: 100%;
+}
 body {
+  background-color: aliceblue;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  height: 100%;
+  margin: 0;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
 button {
   all: unset;
 }
@@ -24,10 +34,21 @@ button {
 
 .screen {
   background-color: rgb(255, 255, 255);
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
   width: 22em;
   height: 6em;
   border-radius: 10px;
   margin: 0.5em;
+}
+
+.previous,
+.current {
+  padding: 0.5em;
+  font-size: x-large;
 }
 
 .undo {
@@ -98,4 +119,8 @@ button {
 
 .button:hover {
   background-color: rgb(209, 209, 209);
+}
+
+footer {
+  font-size: larger;
 }
